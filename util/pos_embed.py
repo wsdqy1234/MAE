@@ -48,6 +48,8 @@ def get_2d_sincos_pos_embed_from_grid(embed_dim, grid):
 
 def get_1d_sincos_pos_embed_from_grid(embed_dim, pos):
     """
+    1D Position Embeddings in Transformer
+
     embed_dim: output dimension for each position
     pos: a list of positions to be encoded: size (M,)
     out: (M, D)

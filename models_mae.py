@@ -94,6 +94,7 @@ class MaskedAutoencoderViT(nn.Module):
 
     def patchify(self, imgs):
         """
+        Patch the images into tokens
         imgs: (N, 3, H, W)
         x: (N, L, patch_size**2 *3)
         """
@@ -108,6 +109,8 @@ class MaskedAutoencoderViT(nn.Module):
 
     def unpatchify(self, x):
         """
+        Unpatch the images (reconstrct the images from patches)
+
         x: (N, L, patch_size**2 *3)
         imgs: (N, 3, H, W)
         """
@@ -123,6 +126,7 @@ class MaskedAutoencoderViT(nn.Module):
     def random_masking(self, x, mask_ratio):
         """
         Perform per-sample random masking by per-sample shuffling.
+        
         Per-sample shuffling is done by argsort random noise.
         x: [N, L, D], sequence
         """
